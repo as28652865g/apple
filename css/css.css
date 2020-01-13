@@ -1,0 +1,459 @@
+
+		@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap&subset=chinese-traditional');
+		@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+		
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: 'Noto Sans TC', sans-serif;
+		}
+		html{
+			width: 100%;
+		}
+		/*首頁鍵*/
+		#menu_control{
+			position: absolute;
+			z-index: -2;
+			opacity: 0;
+		}
+		.menu_btn{
+			width: 40px;
+			height: 40px;
+			background-color: #000;
+			display: block;
+			position: absolute;
+			top: 14px;
+			right: 14px;
+		}
+		.menu_btn span{
+			opacity: 0;
+			width: 1px;
+			height: 1px;
+			display: block;
+			overflow: hidden;
+		}
+		.menu_btn::before{
+			content: '';
+			position: absolute;
+			height: 2px;
+			left: 2px;
+			width: 36px;
+			background-color: #aaa;
+			top:0;
+			bottom: 0;
+			margin: auto;
+			box-shadow: 0px 8px 0px #aaa,
+						0px -8px 0px #aaa;
+		}
+		nav a{
+			display: block;
+			text-decoration: none;
+			color:#aaa;
+			padding: 10px 20px;
+			border-bottom: 1px solid #fff; 
+
+		}
+		#menu_control:checked ~ .main-header nav{
+			left: 0;
+		}
+		@media screen and (max-width:767px){
+			nav{
+			    width: 80%;
+			    background-color: #ccc;
+			    position: absolute;
+			    top: 70px;
+			    left: -100%; 
+			    transition: .5s;
+				}
+		}
+
+		@media screen and (min-width:768px){
+			.menu_btn{ 
+				display: none; 
+			}
+			nav{
+				position: relative;
+				left: 0;
+				display: flex;
+				width: auto;
+				height: auto;
+				top:0;
+				background-color: transparent;
+				}
+			nav a{
+				border-bottom: none;
+			}
+			.header{
+				justify-content: space-between;
+				background-color: #aaa;
+			}
+			.main-header nav{
+				position: relative;
+				left: 0;
+				display: flex;
+				width: auto;
+				height: auto;
+				top:0;
+				background-color: transparent;
+				}
+			.main-header nav a{
+				border-bottom: none;
+			}
+
+
+		}
+		
+		/*導覽列*/
+		.main-header{
+			width: auto;
+			height: 70px;
+			background:#000;
+			position: relative;
+		}
+		.main-header .container-header{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			height: 70px;
+		}
+
+		.main-header nav a{
+			text-decoration: none;
+			color: #fff;
+			padding: 20px;
+			font-size: 27px;
+			position: relative;
+			transform: translateY(0);
+			transition: .6s;
+		}
+		.main-header nav a:hover{
+			transform: translateY(-10px);
+		}
+		.main-header nav a:after{
+			content:'';
+			position: absolute;
+			left: 50%;
+			right: 50%;
+			bottom: -5px;
+			height: 0;
+		}
+		.main-header nav a:hover:after{
+			left: 0;
+			right: 0;
+		}
+		/*圖文*/
+		.banner{
+			width: auto;
+			height: auto;
+			background-image: url(01.jpg);
+			background-size: cover;
+		}
+		.banner .container-banner{
+			width: 100%;
+			max-width:1200px; 
+			height: 500px;
+			margin:auto;
+		}
+		.banner-txt{
+		    padding: 23px;
+   		    width: 310px;
+   		    background-color: #CCC;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
+		.banner-txt h1{
+			font-size: 80px;
+			border-bottom: 1px solid #333;
+			font-weight: 900;
+			padding-bottom: .3em;
+			margin-bottom: .3em;
+			color: #fff;
+		}
+		.banner-txt h1 small{
+			display: block;
+			font-style: 53px;
+			font-weight: 700;
+			color: #fff;
+		}
+		.banner-txt h2{
+			font-size: 50px;
+			font-weight: 700;
+			color: #fff;
+		}
+		.banner-txt p{
+			font-size: 20px;
+			font-weight: 300;
+			color: #fff;
+		}
+		/*主題*/
+		.main-title{
+			margin: 100px 0;
+		}
+		.main-title p{
+			font-size: 45px;
+		}
+		.main-title .container-main-title {
+			width: 100%;
+			margin:auto; 
+			text-align: center;
+		}
+		.main-title .container-title h1{
+			width: 100%;
+			box-sizing: border-box;	
+			font-size: 70px;
+			justify-content: center;
+			margin-bottom: .5em;
+			display: flex;
+		}
+		.main-title .container-title h1:before,
+		.main-title .container-title h1:after{
+			content: '';
+			display: block;
+			width: 4em;
+			height: 5px;
+			background-color: #aaa;
+			margin:auto; 
+		}
+
+
+
+		/*破格式設計*/
+		body{
+			align-items: center;
+		}
+		.wrap-Broken{
+			max-width: 1200px;
+			/*display: flex;*/
+			height: auto;
+			margin: auto;
+			padding-top: 75px;
+		}
+		.item-Broken{
+			width: 370px;
+			height: 470px;
+			margin: auto;
+			text-align: center;
+			border: 10px solid #f9cec2;
+			background-color: #fff;
+			border-radius: 20px;
+			box-shadow: 10px 20px 50px #f7b6a7;
+		}
+		.item-Broken h3{
+			color: #f5afac;
+			position: relative;
+   		    top: -20px;
+		}
+		.item-Broken p{
+			font-size: 20px;
+			color: #ccc;
+			text-align: left;
+			text-indent: 43px;
+			letter-spacing: 2px;
+		}
+		.item-Broken .icon{
+			width: 150px;
+			height: 150px;
+			background-color: #fff;
+			margin:-75px auto 0;
+			font-size: 85px;
+			line-height: 150px;
+			border-radius: 50%;
+			color: #f5afac;
+			position: relative;
+
+		}
+		.item-Broken .icon:before{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-top:10px solid #f9cec2;
+			border-right:10px solid #f9cec2;
+			border-bottom:10px solid transparent;
+			border-left:10px solid transparent;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			transform: rotate(-45deg);
+		}
+		.item-Broken:hover .fa{
+			animation: ss .2s linear infinite alternate;
+		}
+		.item-Broken .txt{
+			padding: 20px 20px 20px;
+		}
+		@keyframes ss{
+			  0%{ transform: rotate(-30deg); }
+			100%{ transform: rotate(30deg); }
+		}
+
+		@media screen and (min-width:768px){
+			.wrap-Broken {
+				display: flex;
+			}
+			.item-Broken .txt p{
+				font-size: 18px;
+			}
+		}
+
+	/*超通用橫式版面*/
+
+		.wrap-Horizontal{
+			display: flex;
+			align-items: center;
+		}
+		.container-Horizontal{
+			width: 100%;
+			margin: auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap:wrap; 
+		}
+		.item-Horizontal{
+			width: 368px;
+			margin: 0 15px;
+			display: flex;
+			background-color: #fff;
+			border: 1px solid #888;
+		}
+		.item-Horizontal .pic {
+			width: 50%;
+		}
+		.item-Horizontal .pic img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.item-Horizontal .txt{
+			width: 50%;
+			padding: 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			/*justify-content: center;*/
+		}
+		.item-Horizontal .txt h2{
+			font-size: 28px;
+			margin-bottom: .4em;
+		}
+		.item-Horizontal .txt p{
+			padding:0 0 10px 0;
+			font-weight: 300;
+		}
+		.item-Horizontal .txt .btn{
+			line-height: 1.5em;
+			border: 1px solid #ccc;
+			padding:0 1em;
+			align-self: flex-end;
+			text-decoration: none;
+			border-radius: 200px;
+			margin-top: auto;
+			color: #aaa;
+		}
+		.item-Horizontal .txt .btn:hover{
+			background-color: #ccc;
+			color: #fff;
+		}
+		@media screen and (min-width:768px){
+			.item-Horizontal .pic img{
+				display: flex;
+			}
+		}
+		@media screen and (max-width:1200px){
+			.item-Horizontal{
+				width: 100%;
+				height: 300px;
+			}
+		}
+
+	/*人員介紹卡片*/
+
+		.wrap-Introduction{
+			justify-content: center;
+
+			width: 100%;
+			margin: auto;
+		}
+		.item-Introduction{
+			width: 368px;
+			margin: 12px;
+			text-align: center;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			transform: translateY(0px);
+			transition: .5s;
+		}
+		.item-Introduction img{
+			width: 100%;
+			height: 500px;
+			vertical-align: middle;
+		}
+		.item-Introduction h2{
+			border-bottom: 1px solid #888;
+			padding-bottom: .3em;
+			margin-bottom: .4em;
+			font-weight: 700;
+		}
+		.item-Introduction p{
+			line-height: 1.6;
+			font-weight: 300;
+			transition: .25s;
+		}
+		.item-Introduction .txt{
+			padding: 20px;
+			position: relative;
+		}
+/*		.item-Introduction .txt:before{
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 0;
+			top: 0;
+			border-top: 50px solid transparent;
+			border-left: 184px solid #fff;
+			border-right: 184px solid #fff;
+			transform: translateY(-100%);
+		}*/
+		.item-Introduction:hover{
+			transform: translateY(-50px);
+		}
+		.item-Introduction:hover .txt{
+			background-image: linear-gradient(0deg,#FB8076,#FEB85D);
+		}
+		.item-Introduction:hover .txt:before{
+			border-left: 184px solid #FEB85D;
+			border-right: 184px solid #FEB85D;
+		}
+		.item-Introduction:hover h2{
+			color: #fff;
+			border-bottom-color: #fff;
+		}
+		.item-Introduction:hover p{
+			color: #fff;
+		}
+
+
+		@media screen and (min-width:768px){
+			.wrap-Introduction{
+				display: flex;
+			}
+		}
+
+		/*頁尾*/
+		
+		.main-footer{
+			width: 100%;
+			padding: 80px;
+			background-color: #1d242a;
+			color: #fff;
+			text-align: center;
+			font-size: 30px;
+		}
+		.main-footer li{
+			padding: 10px;
+		}
